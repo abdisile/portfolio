@@ -8,7 +8,6 @@ export function Experience() {
         <SectionHeading index="02" label="Experience" title="Roles" />
         <ol>
           {experience.map((role) => {
-            const orgUrl = "orgUrl" in role ? role.orgUrl : undefined;
             return (
               <li
                 key={`${role.org}-${role.dates}`}
@@ -22,9 +21,9 @@ export function Experience() {
                     {role.role}
                   </h3>
                   <p className="mt-1 text-sm text-muted">
-                    {orgUrl ? (
+                    {role.orgUrl ? (
                       <a
-                        href={orgUrl}
+                        href={role.orgUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground"

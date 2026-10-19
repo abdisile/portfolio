@@ -119,7 +119,16 @@ export const skillGroups = [
   },
 ];
 
-export const experience = [
+export type ExperienceRole = {
+  role: string;
+  org: string;
+  orgUrl?: string;
+  place: string;
+  dates: string;
+  points: string[];
+};
+
+export const experience: ExperienceRole[] = [
   {
     role: "Full-Stack Engineer",
     org: "ZeroHunger.ai",
