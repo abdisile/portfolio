@@ -8,19 +8,8 @@ export function Hero() {
       className="flex min-h-[calc(100svh-4rem)] scroll-mt-24 flex-col"
     >
       <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-between px-6 py-8 sm:px-8 sm:py-10">
-        <div className="grid flex-1 content-center items-center gap-8 sm:grid-cols-[15rem_minmax(0,1fr)] sm:gap-14">
-          <figure className="rise w-full max-w-[11.5rem] sm:max-w-none">
-            <Image
-              src="/portrait.jpg"
-              alt="Portrait of Abdi Sileshi"
-              width={896}
-              height={1111}
-              priority
-              className="h-auto w-full grayscale transition duration-500 ease-out hover:grayscale-0"
-            />
-          </figure>
-
-          <div className="rise rise-delay">
+        <div className="grid flex-1 content-center items-center gap-8 sm:grid-cols-[minmax(0,1fr)_15rem] sm:gap-14">
+          <div className="rise">
             <p className="font-mono text-[11px] tracking-[0.2em] text-muted uppercase">
               Software engineer
               <span className="mx-2 text-foreground/30">/</span>
@@ -56,6 +45,17 @@ export function Hero() {
               </a>
             </div>
           </div>
+
+          <figure className="rise rise-delay w-full max-w-[11.5rem] sm:max-w-none sm:justify-self-end">
+            <Image
+              src="/portrait.jpg"
+              alt="Portrait of Abdi Sileshi"
+              width={896}
+              height={1111}
+              priority
+              className="h-auto w-full grayscale transition duration-500 ease-out hover:grayscale-0"
+            />
+          </figure>
         </div>
 
         <div className="mt-8 flex flex-col gap-5 border-t border-line pt-5 sm:flex-row sm:items-end sm:justify-between">
