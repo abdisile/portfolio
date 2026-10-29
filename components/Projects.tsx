@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 export function Projects() {
   return (
     <section id="projects" className="scroll-mt-24">
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-4xl px-6 py-16 sm:px-8 sm:py-20">
         <SectionHeading index="03" label="Projects" title="Selected work" />
         <p className="mt-6 text-sm leading-relaxed text-muted">
           Older repositories are on my previous account,{" "}

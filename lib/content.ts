@@ -17,14 +17,14 @@ export const profile = {
   telegram: "https://t.me/Kehtoran",
   telegramLabel: "t.me/Kehtoran",
   resume:
-    "https://drive.google.com/file/d/1vyVSSzdA8AiZHYo01h7nQmyw6aLwD8Dn/view?usp=sharing",
+    "https://drive.google.com/file/d/1dFT5E9xerg8u9cXzuoz2zRA-fa65itqW/view?usp=sharing",
   site: "https://www.abdisileshi.dev",
 };
 
 export const highlights = [
   { value: "3.89", label: "CGPA / 4.00" },
   { value: "4+", label: "Years shipping" },
-  { value: "15+", label: "Products shipped" },
+  { value: "20+", label: "Projects delivered" },
 ];
 
 export const projects = [
@@ -96,27 +96,41 @@ export const projects = [
 export const skillGroups = [
   {
     title: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "SQL", "C++"],
+    items: ["TypeScript", "JavaScript", "Python", "SQL", "C++", "HTML/CSS"],
   },
   {
-    title: "Product",
-    items: ["React", "Next.js", "Tailwind CSS", "Material UI", "Vite"],
+    title: "Frontend & UI",
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Material UI",
+      "Redux / Zustand",
+      "Vite",
+    ],
   },
   {
-    title: "Backend & data",
+    title: "Backend & APIs",
     items: [
       "Node.js",
       "Express",
       "FastAPI",
-      "MongoDB",
-      "PostgreSQL",
-      "OpenAI",
-      "Gemini",
+      "REST APIs",
+      "OpenAI API",
+      "Gemini API",
     ],
   },
   {
-    title: "Delivery",
-    items: ["Git", "GitHub", "Vercel", "Netlify", "Stripe", "Figma"],
+    title: "Databases & ORM",
+    items: ["MongoDB", "PostgreSQL", "Mongoose", "Prisma", "Redis"],
+  },
+  {
+    title: "DevOps & Cloud",
+    items: ["Git", "GitHub", "Docker", "Vercel", "Netlify", "CI/CD"],
+  },
+  {
+    title: "Tools & Integrations",
+    items: ["Stripe", "Postman", "Figma", "Linux / Bash", "JWT Auth"],
   },
 ];
 
@@ -133,7 +147,7 @@ export const experience: ExperienceRole[] = [
   {
     role: "Full-Stack Engineer",
     org: "ZeroHunger.ai",
-    place: "Remote · Part-time",
+    place: "Würzburg, Bavaria, Germany · Remote",
     dates: "Sep 2026 – Present",
     points: [
       "Ship features from database schema and API through to the screen, including operator onboarding.",
@@ -152,7 +166,7 @@ export const experience: ExperienceRole[] = [
   {
     role: "Software Engineer",
     org: "AfterQuery",
-    place: "Remote · Part-time",
+    place: "San Francisco, California · Remote",
     dates: "Jun 2026 – Aug 2026",
     points: [
       "Wrote SWE-bench-style coding tasks and benchmarks for a Y Combinator-backed AI lab.",
@@ -180,3 +194,4 @@ export const experience: ExperienceRole[] = [
     ],
   },
 ];
+

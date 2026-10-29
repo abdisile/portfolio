@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 export function Experience() {
   return (
     <section id="experience" className="scroll-mt-24">
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-4xl px-6 py-16 sm:px-8 sm:py-20">
         <SectionHeading index="02" label="Experience" title="Roles" />
         <ol>
           {experience.map((role) => {

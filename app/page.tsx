@@ -22,7 +22,7 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 px-6 py-8 font-mono text-[11px] tracking-[0.14em] text-muted uppercase sm:px-8">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-6 py-8 font-mono text-[11px] tracking-[0.14em] text-muted uppercase sm:px-8">
           <p>© 2026 {profile.fullName}</p>
           <p>{profile.location}</p>
           <a href="#home" className="text-foreground hover:underline">
