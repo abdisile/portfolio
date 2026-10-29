@@ -22,6 +22,7 @@ export const profile = {
 };
 
 export const highlights = [
+  { value: "3.89", label: "CGPA / 4.00" },
   { value: "4+", label: "Years shipping" },
   { value: "15+", label: "Products shipped" },
 ];
