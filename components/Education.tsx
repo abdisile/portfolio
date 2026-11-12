@@ -3,43 +3,42 @@ import { SectionHeading } from "@/components/SectionHeading";
 export function Education() {
   return (
     <section id="education" className="scroll-mt-24">
-      <div className="mx-auto max-w-4xl px-6 py-16 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
         <SectionHeading index="05" label="Education" title="Degree" />
-        <article className="mt-8 grid gap-3 border-b border-line pb-8 sm:grid-cols-[9rem_1fr] sm:gap-8">
-          <p className="font-mono text-[11px] tracking-[0.14em] text-muted uppercase">
-            May 2022
-            <span className="mt-1 block">Jul 2026</span>
-          </p>
-          <div>
-            <h3 className="font-serif text-2xl tracking-tight">
+        <article
+          data-reveal
+          className="mt-10 grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end"
+        >
+          <div className="lg:col-span-7">
+            <p className="label text-muted">May 2022 – Jul 2026</p>
+            <h3 className="display-sm mt-4 text-4xl text-balance sm:text-6xl">
               B.Eng. Software Engineering
             </h3>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-4 text-lg text-muted">
               Adama Science and Technology University · Adama
             </p>
-            <dl className="mt-5 grid max-w-xs grid-cols-2 gap-6 border-t border-line pt-5">
-              <div>
-                <dt className="font-mono text-[11px] tracking-[0.16em] text-muted uppercase">
-                  CGPA
-                </dt>
-                <dd className="mt-1 font-serif text-xl tracking-tight">
-                  3.89 / 4.00
-                </dd>
-              </div>
-              <div>
-                <dt className="font-mono text-[11px] tracking-[0.16em] text-muted uppercase">
-                  Class rank
-                </dt>
-                <dd className="mt-1 font-serif text-xl tracking-tight">
-                  2nd in class
-                </dd>
-              </div>
-            </dl>
-            <p className="mt-5 text-sm leading-relaxed text-muted">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted">
               Coursework included data structures, databases, distributed
               systems, and machine learning.
             </p>
           </div>
+
+          <dl className="grid grid-cols-2 gap-4 lg:col-span-5">
+            <div className="flex flex-col-reverse justify-between gap-10 rounded-3xl bg-accent p-5 text-accent-ink sm:p-6">
+              <dd>
+                <span className="display block text-7xl sm:text-8xl">3.89</span>
+                <span className="label mt-2 block">out of 4.00</span>
+              </dd>
+              <dt className="label font-semibold">CGPA</dt>
+            </div>
+            <div className="flex flex-col-reverse justify-between gap-10 rounded-3xl border border-foreground p-5 sm:p-6">
+              <dd>
+                <span className="display block text-7xl sm:text-8xl">2nd</span>
+                <span className="label mt-2 block text-muted">in class</span>
+              </dd>
+              <dt className="label font-semibold">Class rank</dt>
+            </div>
+          </dl>
         </article>
       </div>
     </section>

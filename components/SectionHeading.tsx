@@ -1,37 +1,49 @@
+import type { ReactNode } from "react";
+import { Mark } from "@/components/icons";
+
 type SectionHeadingProps = {
   index: string;
   label: string;
   title: string;
-  summary?: string;
+  /** Optional note set beside the title on wide screens. */
+  children?: ReactNode;
 };
 
+/**
+ * Section title. When it scrolls into view the title rises from behind an
+ * edge, the rule underneath draws across, and the label and note fade in.
+ */
 export function SectionHeading({
   index,
   label,
   title,
-  summary,
+  children,
 }: SectionHeadingProps) {
   return (
-    <div className="relative grid gap-2 border-b border-line pb-6 sm:grid-cols-[6.5rem_1fr] sm:items-end sm:gap-8">
-      <p className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">
-        {index} {label}
-      </p>
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -top-4 right-0 font-serif text-6xl leading-none text-foreground/8 select-none sm:text-7xl"
-      >
-        {index}
-      </span>
-      <div className="relative">
-        <h2 className="font-serif text-3xl tracking-tight text-balance sm:text-4xl">
-          {title}
+    <div
+      data-reveal="heading"
+      className="relative flex flex-col gap-5 pb-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12"
+    >
+      <div>
+        <p className="heading-fade label flex items-center gap-2.5 text-muted">
+          <Mark className="size-5" />
+          {index} / {label}
+        </p>
+        <h2 className="display mt-4 text-[clamp(3.25rem,10vw,7rem)]">
+          <span className="title-mask">
+            <span className="title-inner">{title}</span>
+          </span>
         </h2>
-        {summary ? (
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            {summary}
-          </p>
-        ) : null}
       </div>
+      {children ? (
+        <div className="heading-fade max-w-sm text-sm leading-relaxed text-muted lg:pb-2 lg:text-right">
+          {children}
+        </div>
+      ) : null}
+      <span
+        aria-hidden="true"
+        className="heading-rule absolute inset-x-0 bottom-0 h-px bg-foreground"
+      />
     </div>
   );
 }

@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist_Mono, Outfit } from "next/font/google";
+import { Archivo, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/content";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+// One family for headings and body. The width axis is what lets the same
+// font go from narrow poster type to ordinary reading text.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
+  axes: ["wdth"],
 });
 
 const mono = Geist_Mono({
@@ -82,12 +79,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${outfit.variable} ${fraunces.variable} ${mono.variable} h-full scroll-smooth`}
+      className={`${archivo.variable} ${mono.variable} h-full scroll-smooth`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full bg-background font-sans text-foreground antialiased">
+      <body className="isolate min-h-full bg-background font-sans text-foreground antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
