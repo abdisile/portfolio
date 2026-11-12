@@ -4,7 +4,9 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { profile } from "@/lib/content";
 
 const fieldClass =
-  "w-full rounded-xl border border-line bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition focus:border-foreground focus:bg-background focus:ring-1 focus:ring-foreground/20 outline-none";
+  "w-full rounded-xl border border-line bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition focus:border-signal focus:bg-background focus:ring-1 focus:ring-signal/30 outline-none";
+
+const labelClass = "label mb-2 block text-muted";
 
 const WEB3FORMS_ACCESS_KEY = "ae571f37-8e03-4b62-a37a-c558f552db2e";
 
@@ -101,10 +103,7 @@ export function ContactForm() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label
-              htmlFor="name"
-              className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-muted uppercase"
-            >
+            <label htmlFor="name" className={labelClass}>
               Name
             </label>
             <input
@@ -119,10 +118,7 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label
-              htmlFor="email"
-              className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-muted uppercase"
-            >
+            <label htmlFor="email" className={labelClass}>
               Email
             </label>
             <input
@@ -138,10 +134,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label
-            htmlFor="message"
-            className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-muted uppercase"
-          >
+          <label htmlFor="message" className={labelClass}>
             Message
           </label>
           <textarea
@@ -158,7 +151,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-60"
+            className="btn-primary disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? (
               <>
@@ -196,7 +189,7 @@ export function ContactForm() {
             )}
           </div>
           <div className="min-w-0 flex-1 pr-1">
-            <p className="font-serif text-sm font-medium tracking-tight text-foreground">
+            <p className="text-sm font-semibold tracking-tight text-foreground">
               {toast.title}
             </p>
             <p className="mt-0.5 text-xs leading-relaxed text-muted">

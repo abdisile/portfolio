@@ -27,16 +27,17 @@ export const highlights = [
   { value: "20+", label: "Projects delivered" },
 ];
 
-export const projects = [
-  {
-    title: "SEPMS",
-    subtitle: "Startup–investor platform",
-    summary:
-      "Team lead for five engineers. Connects founders and investors with Gemini summaries, voice narration, and live English/Amharic translation.",
-    stack: ["Next.js", "Node.js", "MongoDB", "Gemini"],
-    live: "https://smart-entrepreneurial-pitching-matc-alpha.vercel.app/",
-    code: "https://github.com/Mafiv/Smart-Entrepreneurial-Pitching-Matching-System",
-  },
+export type Project = {
+  title: string;
+  subtitle: string;
+  summary: string;
+  stack: string[];
+  live: string;
+  code: string;
+  extra?: { label: string; href: string };
+};
+
+export const projects: Project[] = [
   {
     title: "Reveal",
     subtitle: "AI conversion analyzer",
@@ -68,9 +69,19 @@ export const projects = [
     code: "https://github.com/Ketoransile/EthioShop",
   },
   {
+    title: "SEPMS",
+    subtitle: "Startup–investor platform",
+    summary:
+      "Team lead for five engineers. Connects founders and investors with Gemini summaries, voice narration, and live English/Amharic translation.",
+    stack: ["Next.js", "Node.js", "MongoDB", "Gemini"],
+    live: "https://smart-entrepreneurial-pitching-matc-alpha.vercel.app/",
+    code: "https://github.com/Mafiv/Smart-Entrepreneurial-Pitching-Matching-System",
+  },
+  {
     title: "Drivezy",
     subtitle: "Car rental",
-    summary: "Browse, filter, and book vehicles through a React app and Express API.",
+    summary:
+      "Browse, filter, and book vehicles through a React app and Express API.",
     stack: ["React", "Express", "MongoDB"],
     live: "https://drivezy-car-rental.vercel.app/",
     code: "https://github.com/Ketoransile/CarRental",
@@ -93,24 +104,19 @@ export const projects = [
   },
 ];
 
-export const skillGroups = [
+/**
+ * The four layers a feature passes through on its way to a user, in order.
+ * Each one lists the tools used at that layer.
+ */
+export const skillStages = [
   {
-    title: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "SQL", "C++", "HTML/CSS"],
+    title: "Data",
+    caption: "Schema and storage",
+    items: ["MongoDB", "PostgreSQL", "Mongoose", "Prisma", "Redis"],
   },
   {
-    title: "Frontend & UI",
-    items: [
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Material UI",
-      "Redux / Zustand",
-      "Vite",
-    ],
-  },
-  {
-    title: "Backend & APIs",
+    title: "API",
+    caption: "Endpoints and logic",
     items: [
       "Node.js",
       "Express",
@@ -121,12 +127,29 @@ export const skillGroups = [
     ],
   },
   {
-    title: "Databases & ORM",
-    items: ["MongoDB", "PostgreSQL", "Mongoose", "Prisma", "Redis"],
+    title: "Screen",
+    caption: "Interfaces people use",
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Material UI",
+      "Redux / Zustand",
+      "Vite",
+    ],
   },
   {
-    title: "DevOps & Cloud",
+    title: "Ship",
+    caption: "Deploy and operate",
     items: ["Git", "GitHub", "Docker", "Vercel", "Netlify", "CI/CD"],
+  },
+];
+
+/** Skills that apply at every layer. */
+export const skillBasics = [
+  {
+    title: "Languages",
+    items: ["TypeScript", "JavaScript", "Python", "SQL", "C++", "HTML/CSS"],
   },
   {
     title: "Tools & Integrations",
@@ -194,4 +217,3 @@ export const experience: ExperienceRole[] = [
     ],
   },
 ];
-
